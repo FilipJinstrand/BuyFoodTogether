@@ -12,6 +12,7 @@ namespace FoodApp
     {
         public MainPage()
         {
+            //Test commit
             InitializeComponent();
         }
     }
