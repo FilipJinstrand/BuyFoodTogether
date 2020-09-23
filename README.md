@@ -1,2 +1,2 @@
-# BuiyFoodTogether
+# BuyFoodTogether
 School project for App development
