@@ -11,7 +11,6 @@ namespace FoodApp
     {
         public MainPage()
         {
-            //Test
             InitializeComponent();
         }
     }
