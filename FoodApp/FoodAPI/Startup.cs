@@ -35,6 +35,8 @@ namespace FoodAPI
                 sp.GetRequiredService<IOptions<FoodAppDatabaseSettings>>().Value);
 
             services.AddSingleton<ItemService>();
+            services.AddSingleton<PersonService>();
+
 
             services.AddControllers();
         }
