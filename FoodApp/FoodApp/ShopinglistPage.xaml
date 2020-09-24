@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.ShopinglistPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ItemCheckbox" TargetType="CheckBox">
+                <Setter Property="Color" 
+                            Value="#4A4A4A" />
+                <Setter Property="Grid.Row" 
+                            Value="1" />
+                <Setter Property="Margin" 
+                            Value="0, 20, 0, 0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#E6FFFF">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="110"/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="50"/>
+                <ColumnDefinition />
+            </Grid.ColumnDefinitions>
+            <BoxView BackgroundColor="#4A4A4A"
+                        Grid.ColumnSpan="2" />
+            <BoxView BackgroundColor="#292F33"
+                     Grid.ColumnSpan="2"
+                     Grid.Row="2" />
+            <Label Text="BFT" 
+                   FontSize="46"
+                   TextColor="#9BD5E0" 
+                   Grid.ColumnSpan="2"
+                   Margin="20, 30, 0, 0"/>
+            <StackLayout Grid.Row="1"
+                            Margin="10,0,10,10"
+                            Orientation="Vertical">
+                <CheckBox Style="{StaticResource ItemCheckbox}"/>
+            </StackLayout>
+            <StackLayout Grid.Row="1"
+                            Margin="10,0,10,10"
+                            Orientation="Vertical"
+                            Grid.Column="1">
+                    <Label Text="test"
+                            Grid.Row="1"
+                            Grid.Column="1"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>
