@@ -14,6 +14,6 @@ namespace FoodAPI.Models
         public string Id { get; set; }
         [BsonElement("Name")]
         public string Title { get; set; }
-        public Person Person { get; set; }
+        public string PersonName { get; set; }
     }
 }
