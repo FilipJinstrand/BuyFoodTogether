@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="FoodApp.ShopinglistPage">
+             x:Class="FoodApp.GroupPage">
     <ContentPage.Resources>
         <ResourceDictionary>
             <Style x:Key="ItemCheckbox" TargetType="CheckBox">
@@ -21,7 +21,7 @@
                 <RowDefinition Height="*" />
                 <RowDefinition Height="110"/>
             </Grid.RowDefinitions>
-            <BoxView BackgroundColor="#4A4A4A" />
+            <BoxView BackgroundColor="#4A4A4A"/>
             <BoxView BackgroundColor="#292F33"
                      Grid.Row="2" />
             <Grid>
@@ -47,7 +47,7 @@
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2" >
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="90"/>
@@ -63,20 +63,31 @@
                 <Button x:Name="ListPage_Button" 
                             CornerRadius="45"
                             Text="List"
-                             TextColor="#9BD5E0"
-                            BackgroundColor="#FF914D"
-                            Grid.Row="1"
-                            Grid.Column="1" />
-                <Button x:Name="GroupPage_Button" CornerRadius="45"
-                            Text="Group"
                             TextColor="#FF914D"
-                            BackgroundColor="#9BD5E0"                          
+                            BackgroundColor="#9BD5E0"
                             Grid.Row="1"
-                            Grid.Column="3"
-                            Clicked="GroupPage_Clicked" />
+                            Grid.Column="1"
+                            Clicked="ShopinglistPage_Clicked" />
+                <Button x:Name="GroupPage_Button"
+                            CornerRadius="45"
+                            Text="Group"
+                            TextColor="#9BD5E0"
+                            BackgroundColor="#FF914D"                            
+                            Grid.Row="1"
+                            Grid.Column="3" />
             </Grid>
             <StackLayout Grid.Row="1" >
-                <Label Text="List"/>
+                <Label Text="Group"/>
+                <Button HorizontalOptions="EndAndExpand"
+                        VerticalOptions="EndAndExpand"
+                        BackgroundColor="#9BD5E0"
+                        Text="+"
+                        FontSize="36"
+                        WidthRequest="75"
+                        HeightRequest="65"
+                        CornerRadius="30"
+                        Padding="10, 0, 10, 5" 
+                        Margin="10"/>
             </StackLayout>
         </Grid>
     </ContentPage.Content>

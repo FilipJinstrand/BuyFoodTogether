@@ -10,17 +10,18 @@ using Xamarin.Forms.Xaml;
 namespace FoodApp
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class ShopinglistPage : ContentPage
+    public partial class GroupPage : ContentPage
     {
-        public ShopinglistPage()
+        public GroupPage()
         {
             InitializeComponent();
         }
 
-        private void GroupPage_Clicked(object sender, EventArgs e)
+        private void ShopinglistPage_Clicked(object sender, EventArgs e)
         {
-            App.Current.MainPage = new GroupPage();
+            App.Current.MainPage = new ShopinglistPage();
         }
+
         public void LogOutButton_Clicked(object sender, EventArgs e)
         {
             App.Current.MainPage = new LoginPage();

@@ -29,7 +29,7 @@
                     Padding="0,15, 0, 0"
                     />
             <Label Text="Username"
-                    TextColor="#FF914D" 
+                    TextColor="#E6FFFF" 
                     FontSize="22"
                     Margin="20, 0, 0, 0"
                     Grid.Column="0" 
@@ -45,6 +45,8 @@
                     />
             <Button x:Name="login_Button"
                     Text="Login"
+                    BackgroundColor="#FF914D"
+                    CornerRadius="10"
                     Clicked="Signin_Clicked" 
                     Grid.Column="1" 
                     Grid.Row="3"
