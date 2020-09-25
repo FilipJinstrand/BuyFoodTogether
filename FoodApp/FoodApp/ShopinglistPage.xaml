@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="FoodApp.ShopinglistPage">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="ItemCheckbox" TargetType="CheckBox">
+                <Setter Property="Color" 
+                            Value="#4A4A4A" />
+                <Setter Property="Grid.Row" 
+                            Value="1" />
+                <Setter Property="Margin" 
+                            Value="0, 20, 0, 0" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid BackgroundColor="#E6FFFF">
+            <Grid.RowDefinitions >
+                <RowDefinition Height="100"/>
+                <RowDefinition Height="*" />
+                <RowDefinition Height="110"/>
+            </Grid.RowDefinitions>
+            <BoxView BackgroundColor="#4A4A4A" />
+            <BoxView BackgroundColor="#292F33"
+                     Grid.Row="2" />
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="30"/>
+                    <ColumnDefinition Width="120"/>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Label Grid.Column="1"
+                        Text="BFT" 
+                        FontSize="46"
+                        TextColor="#9BD5E0" 
+                        Margin="0, 30, 0, 0" 
+                        FontAttributes="Bold"/>
+                <Button Grid.Column="3"
+                        Text="Log Out"
+                        FontSize="14"
+                        Margin="0, 40, 0, 10"
+                        CornerRadius="32" 
+                        BackgroundColor="#292F33"
+                        TextColor="#E6FFFF"
+                        Clicked="LogOutButton_Clicked"/>
+            </Grid>
+            <Grid Grid.Row="2">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition />
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="90"/>
+                    <ColumnDefinition Width="15"/>
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="10"/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition />
+                </Grid.RowDefinitions>
+                <Button x:Name="ListPage_Button" 
+                            CornerRadius="45"
+                            Text="List"
+                             TextColor="#9BD5E0"
+                            BackgroundColor="#FF914D"
+                            Grid.Row="1"
+                            Grid.Column="1" />
+                <Button x:Name="GroupPage_Button" CornerRadius="45"
+                            Text="Group"
+                            TextColor="#FF914D"
+                            BackgroundColor="#9BD5E0"                          
+                            Grid.Row="1"
+                            Grid.Column="3"
+                            Clicked="GroupPage_Clicked" />
+            </Grid>
+            <StackLayout Grid.Row="1" >
+                <Label Text="List"/>
+            </StackLayout>
+        </Grid>
+    </ContentPage.Content>
+</ContentPage>

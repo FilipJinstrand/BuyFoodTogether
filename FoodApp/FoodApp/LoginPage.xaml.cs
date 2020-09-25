@@ -24,7 +24,7 @@ namespace FoodApp
             if (user == "hej")
             {
                 //byt ut MainPage mot shoping lista
-                App.Current.MainPage = new MainPage();
+                App.Current.MainPage = new ShopinglistPage();
             }
             else
             {
