@@ -22,16 +22,18 @@ namespace FoodApp
 
         private async void Signin_Clicked(object sender, EventArgs e)
         {
-            var user = await apiService.GetPerson();
+            var users = await apiService.GetPersons();
 
-            if (user.Name == entry_Username.Text)
+            foreach (var user in users)
             {
-                //byt ut MainPage mot shoping lista
-                App.Current.MainPage = new ShopinglistPage();
-            }
-            else
-            {
-                errorUsername.TextColor = Color.FromHex("#4A4A4A");
+                if (user.Name == entry_Username.Text)
+                {
+                    App.Current.MainPage = new ShopinglistPage();
+                }
+                else
+                {
+                    errorUsername.TextColor = Color.FromHex("#4A4A4A");
+                }
             }
         }
     }
