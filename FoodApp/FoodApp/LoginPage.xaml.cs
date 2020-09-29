@@ -24,7 +24,7 @@ namespace FoodApp
         {
             var user = await apiService.GetPerson();
 
-            if (user.Name == "hej")
+            if (user.Name == entry_Username.Text)
             {
                 //byt ut MainPage mot shoping lista
                 App.Current.MainPage = new ShopinglistPage();
