@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodApp.Services;
+using System;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -9,7 +10,7 @@ namespace FoodApp
         public App()
         {
             InitializeComponent();
-
+            DependencyService.Register<IApiService, ApiServiceMock>();
             MainPage = new LoginPage();
         }
 
