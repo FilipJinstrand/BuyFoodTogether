@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FoodApp.Services;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,16 +13,18 @@ namespace FoodApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        IApiService apiService;
         public LoginPage()
         {
             InitializeComponent();
+            apiService = DependencyService.Get<IApiService>();
         }
 
-        private void Signin_Clicked(object sender, EventArgs e)
+        private async void Signin_Clicked(object sender, EventArgs e)
         {
-            var user = entry_Username.Text;
+            var user = await apiService.GetPerson();
 
-            if (user == "hej")
+            if (user.Name == "hej")
             {
                 //byt ut MainPage mot shoping lista
                 App.Current.MainPage = new ShopinglistPage();
