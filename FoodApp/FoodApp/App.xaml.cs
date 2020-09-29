@@ -10,7 +10,8 @@ namespace FoodApp
         public App()
         {
             InitializeComponent();
-            DependencyService.Register<IApiService, ApiServiceMock>();
+            //DependencyService.Register<IApiService, ApiServiceMock>();
+            DependencyService.Register<IApiService, ApiService>();
             MainPage = new LoginPage();
         }
 

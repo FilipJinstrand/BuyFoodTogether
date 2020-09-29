@@ -8,8 +8,8 @@ namespace FoodApp.Services
 {
     public interface IApiService
     {
-        Task<Item> GetItem();
+        Task<List<Item>> GetItems();
 
-        Task<Person> GetPerson();
+        Task<List<Person>> GetPersons();
     }
 }

@@ -8,27 +8,27 @@ namespace FoodApp.Services
 {
     public class ApiServiceMock : IApiService
     {
-        public async Task<Item> GetItem()
+        public async Task<List<Item>> GetItems()
         {
             await Task.Run(() => { });
 
 
-            return new Item
+            return new List<Item>
             {
-                Id = "Hej",
-                Title = "Köpt Bröd",
-                Person = "Karl"
+                //Id = "Hej",
+                //Title = "Köpt Bröd",
+                //Person = "Karl"
             };
         }
 
-        public async Task<Person> GetPerson()
+        public async Task<List<Person>> GetPersons()
         {
             await Task.Run(() => { });
 
-            return new Person
+            return new List<Person>
             {
-                Id = "akjshd",
-                Name = "Karl"
+                //Id = "akjshd",
+                //Name = "Karl"
             };
         }
     }
