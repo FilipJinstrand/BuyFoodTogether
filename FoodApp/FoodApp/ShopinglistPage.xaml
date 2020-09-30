@@ -75,8 +75,24 @@
                             Grid.Column="3"
                             Clicked="GroupPage_Clicked" />
             </Grid>
-            <StackLayout Grid.Row="1" >
-                <Label Text="List"/>
+            <StackLayout Grid.Row="1">
+                <ListView x:Name="ShoppingItemsView" ItemsSource="{Binding ShoppingItems}" SelectionMode="None">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell>
+                                <StackLayout Orientation="Vertical">
+                                    <StackLayout Orientation="Horizontal">
+                                        <CheckBox IsChecked="False"/>
+                                        <StackLayout Orientation="Vertical">
+                                            <Label Text="{Binding Title}" FontSize="Body" VerticalOptions="StartAndExpand"/>
+                                            <Label Text="{Binding Person}" FontSize="Caption" VerticalOptions="EndAndExpand"/>
+                                        </StackLayout>
+                                    </StackLayout>
+                                </StackLayout>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
         </Grid>
     </ContentPage.Content>
