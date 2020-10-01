@@ -2,18 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.ShopinglistPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="ItemCheckbox" TargetType="CheckBox">
-                <Setter Property="Color" 
-                            Value="#4A4A4A" />
-                <Setter Property="Grid.Row" 
-                            Value="1" />
-                <Setter Property="Margin" 
-                            Value="0, 20, 0, 0" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid BackgroundColor="#E6FFFF">
             <Grid.RowDefinitions >
@@ -75,25 +63,71 @@
                             Grid.Column="3"
                             Clicked="GroupPage_Clicked" />
             </Grid>
-            <StackLayout Grid.Row="1">
-                <ListView x:Name="ShoppingItemsView" ItemsSource="{Binding ShoppingItems}" SelectionMode="None">
+            <Grid BackgroundColor="Transparent" 
+                      Grid.Row="1">
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <ListView x:Name="ShoppingItemsView" 
+                          ItemsSource="{Binding ShoppingItems}" 
+                          SelectionMode="None"
+                          Grid.ColumnSpan="3"
+                          Grid.RowSpan="3">
                     <ListView.ItemTemplate>
                         <DataTemplate>
                             <ViewCell>
                                 <StackLayout Orientation="Vertical">
                                     <StackLayout Orientation="Horizontal">
-                                        <CheckBox IsChecked="False"/>
+                                        <CheckBox x:Name="ShopingItem_Check" 
+                                                    IsChecked="False" 
+                                                    Color="#4A4A4A" 
+                                                    CheckedChanged="ShopingItem_Check_CheckedChanged"/>
                                         <StackLayout Orientation="Vertical">
-                                            <Label Text="{Binding Title}" FontSize="Body" VerticalOptions="StartAndExpand"/>
-                                            <Label Text="{Binding Person}" FontSize="Caption" VerticalOptions="EndAndExpand"/>
+                                            <Label  x:Name="ItemTitle"
+                                                    Text="{Binding Title}" 
+                                                    FontSize="Body" 
+                                                    VerticalOptions="StartAndExpand"
+                                                    TextColor="#292F33"/>
+                                            <Label Text="{Binding Person}" 
+                                                    FontSize="Caption" 
+                                                    VerticalOptions="EndAndExpand"
+                                                    TextColor="#4A4A4A"/>
                                         </StackLayout>
+                                        <Button x:Name="RemoveItemButton"
+                                                    Text="X" 
+                                                    FontAttributes="Bold"
+                                                    HorizontalOptions="EndAndExpand" 
+                                                    HeightRequest="30" WidthRequest="60" 
+                                                    BackgroundColor="Transparent" 
+                                                    TextColor="#FF914D"
+                                                    Clicked="RemoveItemButton_Clicked"/>
                                     </StackLayout>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
                     </ListView.ItemTemplate>
                 </ListView>
-            </StackLayout>
+                <Button Grid.Column="1"
+                            Grid.Row="1"
+                            x:Name="AddItemButton"
+                            Text="+" 
+                            FontSize="60"
+                            FontAttributes="Bold"
+                            HeightRequest="30" WidthRequest="60" 
+                            BackgroundColor="#292F33" 
+                            TextColor="#9BD5E0"
+                            CornerRadius="30"
+                            Clicked="AddItemButton_Clicked"
+                            HorizontalOptions="CenterAndExpand"
+                            Padding="0,-13, 0, 0"/>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

@@ -2,18 +2,6 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="FoodApp.GroupPage">
-    <ContentPage.Resources>
-        <ResourceDictionary>
-            <Style x:Key="ItemCheckbox" TargetType="CheckBox">
-                <Setter Property="Color" 
-                            Value="#4A4A4A" />
-                <Setter Property="Grid.Row" 
-                            Value="1" />
-                <Setter Property="Margin" 
-                            Value="0, 20, 0, 0" />
-            </Style>
-        </ResourceDictionary>
-    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid BackgroundColor="#E6FFFF">
             <Grid.RowDefinitions >
@@ -76,19 +64,32 @@
                             Grid.Row="1"
                             Grid.Column="3" />
             </Grid>
-            <StackLayout Grid.Row="1" >
-                <Label Text="Group"/>
-                <Button HorizontalOptions="EndAndExpand"
-                        VerticalOptions="EndAndExpand"
-                        BackgroundColor="#9BD5E0"
-                        Text="+"
-                        FontSize="36"
-                        WidthRequest="75"
-                        HeightRequest="65"
-                        CornerRadius="30"
-                        Padding="10, 0, 10, 5" 
-                        Margin="10"/>
-            </StackLayout>
+            <Grid BackgroundColor="Transparent" 
+                  Grid.Row="1">
+                 <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <Button Grid.Column="1"
+                            Grid.Row="1"
+                            x:Name="AddPersonButton"
+                            Text="+" 
+                            FontSize="60"
+                            FontAttributes="Bold"
+                            HeightRequest="30" WidthRequest="60" 
+                            BackgroundColor="#292F33" 
+                            TextColor="#9BD5E0"
+                            CornerRadius="30"
+                            Clicked="AddPersonButton_Clicked"
+                            HorizontalOptions="CenterAndExpand"
+                            Padding="0,-13, 0, 0"/>
+            </Grid>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

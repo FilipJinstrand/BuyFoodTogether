@@ -26,5 +26,10 @@ namespace FoodApp
         {
             App.Current.MainPage = new LoginPage();
         }
+
+        private void AddPersonButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }

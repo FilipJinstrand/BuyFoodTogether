@@ -42,6 +42,7 @@
                     Margin="20, 0, 0, 10"
                     Grid.Column="0" 
                     Grid.Row="3"
+                    Completed="Signin_Clicked"
                     />
             <Button x:Name="login_Button"
                     Text="Login"
