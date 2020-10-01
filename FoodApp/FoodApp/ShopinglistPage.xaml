@@ -1,13 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.ShopinglistPage">
     <ContentPage.Content>
-        <Grid BackgroundColor="#E6FFFF">
+        <Grid BackgroundColor="#E6FFFF"
+              RowSpacing="0">
             <Grid.RowDefinitions >
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="110"/>
+                <RowDefinition Height="80"/>
             </Grid.RowDefinitions>
             <BoxView BackgroundColor="#4A4A4A" />
             <BoxView BackgroundColor="#292F33"
@@ -20,12 +22,11 @@
                     <ColumnDefinition Width="90"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
-                <Label Grid.Column="1"
-                        Text="BFT" 
-                        FontSize="46"
-                        TextColor="#9BD5E0" 
-                        Margin="0, 30, 0, 0" 
-                        FontAttributes="Bold"/>
+                <Image Source="{local:ImageResourceExtention FoodApp.images.Logo_WNTBmain.png}"
+                        Grid.Column="1"
+                        VerticalOptions="Center" 
+                        HeightRequest="200"
+                        Margin="-15, -15, -15, -15"/>
                 <Button Grid.Column="3"
                         Text="Log Out"
                         FontSize="14"
@@ -35,33 +36,39 @@
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
-            <Grid Grid.Row="2">
+            <Grid Grid.Row="2"
+                  ColumnSpacing="0"
+                  RowSpacing="0">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
                     <ColumnDefinition Width="90"/>
                     <ColumnDefinition Width="10"/>
                     <ColumnDefinition Width="90"/>
-                    <ColumnDefinition Width="15"/>
+                    <ColumnDefinition Width="0"/>
                 </Grid.ColumnDefinitions>
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="10"/>
-                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="5"/>
+                    <RowDefinition Height="40"/>
                     <RowDefinition />
                 </Grid.RowDefinitions>
                 <Button x:Name="ListPage_Button" 
-                            CornerRadius="45"
                             Text="List"
-                             TextColor="#9BD5E0"
-                            BackgroundColor="#FF914D"
-                            Grid.Row="1"
+                            CornerRadius="0"
+                            TextColor="#4A4A4A"
+                            BackgroundColor="#9BD5E0"
+                            Grid.RowSpan="2"
                             Grid.Column="1" />
-                <Button x:Name="GroupPage_Button" CornerRadius="45"
+                <Button x:Name="GroupPage_Button"
                             Text="Group"
-                            TextColor="#FF914D"
-                            BackgroundColor="#9BD5E0"                          
-                            Grid.Row="1"
+                            CornerRadius="0"
+                            TextColor="#9BD5E0"
+                            BackgroundColor="#4A4A4A"                          
                             Grid.Column="3"
+                            Grid.RowSpan="2"
                             Clicked="GroupPage_Clicked" />
+                <BoxView Color="#E6FFFF"
+                         HeightRequest="5"
+                         Grid.Column="1"/>
             </Grid>
             <Grid BackgroundColor="Transparent" 
                       Grid.Row="1">
