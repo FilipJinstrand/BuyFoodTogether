@@ -48,5 +48,27 @@ namespace FoodApp
         {
             App.Current.MainPage = new LoginPage();
         }
+
+        private void ShopingItem_Check_CheckedChanged(object sender, CheckedChangedEventArgs e)
+        {
+            if (e.Value == true)
+            {
+                
+            }
+            else if(e.Value == false)
+            {
+                ShoppingItemsView.BackgroundColor = Color.FromHex("None");
+            }
+        }
+
+        private void RemoveItemButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
+
+        private void AddItemButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
     }
 }
