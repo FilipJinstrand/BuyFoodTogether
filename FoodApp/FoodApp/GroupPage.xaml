@@ -4,12 +4,11 @@
              xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.GroupPage">
     <ContentPage.Content>
-        <Grid BackgroundColor="#E6FFFF"
-              RowSpacing="0">
+        <Grid RowSpacing="0">
             <Grid.RowDefinitions >
                 <RowDefinition Height="100"/>
                 <RowDefinition Height="*" />
-                <RowDefinition Height="80"/>
+                <RowDefinition Height="70"/>
             </Grid.RowDefinitions>
             <BoxView BackgroundColor="#4A4A4A"/>
             <BoxView BackgroundColor="#292F33"
@@ -19,19 +18,18 @@
                     <ColumnDefinition Width="30"/>
                     <ColumnDefinition Width="120"/>
                     <ColumnDefinition/>
-                    <ColumnDefinition Width="90"/>
-                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="110"/>
                 </Grid.ColumnDefinitions>
                 <Image Source="{local:ImageResourceExtention FoodApp.images.Logo_WNTBmain.png}"
                         Grid.Column="1"
                         VerticalOptions="Center" 
                         HeightRequest="200"
-                        Margin="-15, -15, -15, -15"/>
+                        Margin="-20, -15, -10, -30"/>
                 <Button Grid.Column="3"
                         Text="Log Out"
                         FontSize="14"
-                        Margin="0, 40, 0, 10"
-                        CornerRadius="32" 
+                        CornerRadius="20"
+                        Margin="0, 40, 10, 22"
                         BackgroundColor="#292F33"
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
@@ -54,21 +52,19 @@
                 <Button x:Name="ListPage_Button" 
                             Text="List"
                             CornerRadius="0"
-                            TextColor="#4A4A4A"
-                            BackgroundColor="#9BD5E0"
+                            TextColor="#9BD5E0"
+                            BackgroundColor="#4A4A4A"  
                             Grid.Column="1"
                             Grid.RowSpan="2"
                             Clicked="ShopinglistPage_Clicked" />
                 <Button x:Name="GroupPage_Button"
                             Text="Group"
                             CornerRadius="0"
-                            TextColor="#9BD5E0"
-                            BackgroundColor="#4A4A4A"
+                            TextColor="#4A4A4A"
+                            BackgroundColor="#9BD5E0"
                             Grid.RowSpan="2"
-                            Grid.Column="3"/>
-                <BoxView Color="#E6FFFF"
-                         HeightRequest="5"
-                         Grid.Column="3"/>
+                            Grid.Column="3"
+                            IsEnabled="False"/>
 
             </Grid>
             <Grid BackgroundColor="Transparent" 
@@ -85,7 +81,7 @@
                 </Grid.ColumnDefinitions>
                 <Button Grid.Column="1"
                             Grid.Row="1"
-                            x:Name="AddPersonButton"
+                            x:Name="AddItemButton"
                             Text="+" 
                             FontSize="60"
                             FontAttributes="Bold"

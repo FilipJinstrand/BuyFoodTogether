@@ -21,7 +21,6 @@
     <EmbeddedResource Include="images\Logo_WNTB.png" />
     <EmbeddedResource Include="images\Logo_WNTBmain.png" />
     <EmbeddedResource Include="images\Logo_WNTBv1.png" />
-    <EmbeddedResource Include="images\XamarinLogo.png" />
   </ItemGroup>
 
   <ItemGroup>
