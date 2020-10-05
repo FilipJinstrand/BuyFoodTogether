@@ -1,25 +1,47 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.LoginPage">
    
     <ContentPage.Content>
-        <Grid BackgroundColor="#E6FFFF">
+        <Grid RowSpacing="0"
+              ColumnSpacing="0"
+              BackgroundColor="White">
             <Grid.RowDefinitions>
-            <RowDefinition Height="180"/>
-            <RowDefinition Height="100"/>
-            <RowDefinition Height="40" />
-            <RowDefinition Height="50"/>
+            <RowDefinition Height="220"/>
+            <RowDefinition Height="80"/>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="60" />
+            <RowDefinition Height="90"/>
             <RowDefinition />
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition />
+                <ColumnDefinition Width="2*"/>
                 <ColumnDefinition />
             </Grid.ColumnDefinitions>
-            <BoxView Color="#4A4A4A" 
+            <BoxView BackgroundColor="#3A3A3A"
+                        Grid.ColumnSpan="2"
+                        Grid.RowSpan="2"/>
+            <Image Source="{local:ImageResourceExtention FoodApp.images.Logo_WNTBv1.png}"
+                    HorizontalOptions="CenterAndExpand"
+                    WidthRequest="140"
+                    Grid.ColumnSpan="2"/>
+            <BoxView Color="#4A4A4A"
                      Grid.ColumnSpan="2"
-                     Grid.RowSpan="3"
-                     Grid.Row="1"/>
+                     Grid.Row="1"
+                     Grid.RowSpan="2"
+                     CornerRadius="40"
+                     Margin="0, 0, 0, -30"/>
+            <BoxView Color="white"
+                     Grid.Row="2"
+                     Grid.ColumnSpan="2"
+                     Margin="0, 0, 0, -5"
+                     CornerRadius="10"/>
+            <BoxView Color="White"
+                     Grid.Row="3"
+                     Grid.ColumnSpan="2"
+                     Grid.RowSpan="2"/>
             <Label Text="Login"
                     FontSize="32"
                     TextColor="#9BD5E0"
@@ -29,36 +51,35 @@
                     Padding="0,15, 0, 0"
                     />
             <Label Text="Username"
-                    TextColor="#E6FFFF" 
+                    TextColor="#4A4A4A" 
                     FontSize="22"
-                    Margin="20, 0, 0, 0"
+                    Margin="20, 10, 0, 0"
                     Grid.Column="0" 
-                    Grid.Row="2"/>
+                    Grid.Row="3"/>
             <Entry x:Name="entry_Username"
                     Placeholder="Username" 
-                    PlaceholderColor="#E1CFC4"                 
+                    PlaceholderColor="#919F94"                 
                     TextColor="#FF914D"   
                     ClearButtonVisibility="WhileEditing"
-                    Margin="20, 0, 0, 10"
+                    Margin="30, 0, 20, 35"
                     Grid.Column="0" 
-                    Grid.Row="3"
+                    Grid.Row="4"
                     Completed="Signin_Clicked"
                     />
             <Button x:Name="login_Button"
                     Text="Login"
                     BackgroundColor="#FF914D"
-                    CornerRadius="10"
+                    CornerRadius="20"
                     Clicked="Signin_Clicked" 
                     Grid.Column="1" 
-                    Grid.Row="3"
-                    Margin="10, 0, 20, 10"
-                    WidthRequest="30" />
+                    Grid.Row="4"
+                    Margin="0, 15, 30, 35"/>
             <Label x:Name="errorUsername"
                    Text="Incorect username.."
                    FontSize="22"
                    Grid.Column="0"
-                   Grid.Row="4"
-                   TextColor="#E6FFFF" />
+                   Grid.Row="5"
+                   TextColor="Transparent" />
         </Grid>           
     </ContentPage.Content>
 </ContentPage>
