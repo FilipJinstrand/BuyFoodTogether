@@ -6,12 +6,12 @@
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions >
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="480" />
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <BoxView BackgroundColor="#4A4A4A"/>
-            <BoxView BackgroundColor="#292F33"
+            <BoxView BackgroundColor="#333231"
                      Grid.Row="2" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -20,17 +20,17 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="110"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="{local:ImageResourceExtention FoodApp.images.Logo_WNTBmain.png}"
+                <Image Source="{local:ImageResourceExtention FoodApp.images.MainPage_WNTB_logo.png}"
                         Grid.Column="1"
                         VerticalOptions="Center" 
                         HeightRequest="200"
-                        Margin="-20, -15, -10, -30"/>
+                        Margin="-20, -15, -10, -20"/>
                 <Button Grid.Column="3"
                         Text="Log Out"
                         FontSize="14"
                         CornerRadius="20"
-                        Margin="0, 40, 10, 22"
-                        BackgroundColor="#292F33"
+                        Margin="0, 50, 10, 40"
+                        BackgroundColor="#333231"
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
@@ -79,6 +79,13 @@
                     <ColumnDefinition Width="60"/>
                     <ColumnDefinition Width="25"/>
                 </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="white"
+                        CornerRadius="20"
+                        Grid.RowSpan="3"
+                        Grid.ColumnSpan="3"
+                        Margin="0, -20, 0, 0"/>
+                
+
                 <Button Grid.Column="1"
                             Grid.Row="1"
                             x:Name="AddItemButton"
@@ -86,7 +93,7 @@
                             FontSize="60"
                             FontAttributes="Bold"
                             HeightRequest="30" WidthRequest="60" 
-                            BackgroundColor="#292F33" 
+                            BackgroundColor="#4A4A4A" 
                             TextColor="#9BD5E0"
                             CornerRadius="30"
                             Clicked="AddPersonButton_Clicked"
