@@ -6,12 +6,12 @@
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions >
-                <RowDefinition Height="100"/>
-                <RowDefinition Height="*" />
-                <RowDefinition Height="70"/>
+                <RowDefinition Height="130"/>
+                <RowDefinition Height="480" />
+                <RowDefinition/>
             </Grid.RowDefinitions>
             <BoxView BackgroundColor="#4A4A4A" />
-            <BoxView BackgroundColor="#292F33"
+            <BoxView BackgroundColor="#333231"
                      Grid.Row="2" />
             <Grid>
                 <Grid.ColumnDefinitions>
@@ -20,20 +20,21 @@
                     <ColumnDefinition/>
                     <ColumnDefinition Width="110"/>
                 </Grid.ColumnDefinitions>
-                <Image Source="{local:ImageResourceExtention FoodApp.images.Logo_WNTBmain.png}"
+                <Image Source="{local:ImageResourceExtention FoodApp.images.MainPage_WNTB_logo.png}"
                         Grid.Column="1"
                         VerticalOptions="Center" 
                         HeightRequest="200"
-                        Margin="-20, -15, -10, -30"/>
+                        Margin="-20, -15, -10, -20"/>
                 <Button Grid.Column="3"
                         Text="Log Out"
                         FontSize="14"
                         CornerRadius="20"
-                        Margin="0, 40, 10, 22"
-                        BackgroundColor="#292F33"
+                        Margin="0, 50, 10, 40"
+                        BackgroundColor="#333231"
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
+            
             <Grid Grid.Row="2"
                   ColumnSpacing="0"
                   RowSpacing="0">
@@ -78,40 +79,56 @@
                     <ColumnDefinition Width="60"/>
                     <ColumnDefinition Width="25"/>
                 </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="white"
+                        CornerRadius="20"
+                        Grid.RowSpan="3"
+                        Grid.ColumnSpan="3"
+                        Margin="0, -20, 0, 0"/>
                 <ListView x:Name="ShoppingItemsView" 
                           ItemsSource="{Binding ShoppingItems}" 
                           SelectionMode="None"
                           Grid.ColumnSpan="3"
-                          Grid.RowSpan="3">
+                          Grid.RowSpan="3"
+                          Margin="5, -20, 3, 0">
                     <ListView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell>
-                                <StackLayout Orientation="Vertical">
-                                    <StackLayout Orientation="Horizontal">
+                            <ViewCell >
+                                <StackLayout Orientation="Vertical"
+                                             Margin="0, 15, 0, 0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition  Width="40"/>
+                                            <ColumnDefinition/>
+                                            <ColumnDefinition Width="90"/>
+                                            <ColumnDefinition Width="40"/>
+                                        </Grid.ColumnDefinitions>
                                         <CheckBox x:Name="ShopingItem_Check" 
+                                                    Grid.Column="0"
                                                     IsChecked="False" 
                                                     Color="#4A4A4A" 
                                                     CheckedChanged="ShopingItem_Check_CheckedChanged"/>
-                                        <StackLayout Orientation="Vertical">
-                                            <Label  x:Name="ItemTitle"
+                                        <Label  x:Name="ItemTitle"
+                                                    Grid.Column="1"
                                                     Text="{Binding Title}" 
                                                     FontSize="Body" 
-                                                    VerticalOptions="StartAndExpand"
-                                                    TextColor="#292F33"/>
-                                            <Label Text="{Binding Person}" 
+                                                    VerticalOptions="Start"
+                                                    TextColor="#333231"/>
+                                        <Label Text="{Binding Person}" 
                                                     FontSize="Caption" 
-                                                    VerticalOptions="EndAndExpand"
+                                                    Grid.Column="2"
+                                                    HorizontalOptions="EndAndExpand"
                                                     TextColor="#4A4A4A"/>
-                                        </StackLayout>
                                         <Button x:Name="RemoveItemButton"
                                                     Text="X" 
+                                                    Grid.Column="3"
                                                     FontAttributes="Bold"
+                                                    Margin="0, -12, 0, 0"
                                                     HorizontalOptions="EndAndExpand" 
-                                                    HeightRequest="30" WidthRequest="60" 
+                                                    HeightRequest="40" WidthRequest="40" 
                                                     BackgroundColor="Transparent" 
-                                                    TextColor="#FF914D"
+                                                    TextColor="#D78B7D"
                                                     Clicked="RemoveItemButton_Clicked"/>
-                                    </StackLayout>
+                                    </Grid>
                                 </StackLayout>
                             </ViewCell>
                         </DataTemplate>
@@ -124,7 +141,7 @@
                             FontSize="60"
                             FontAttributes="Bold"
                             HeightRequest="30" WidthRequest="60" 
-                            BackgroundColor="#292F33" 
+                            BackgroundColor="#4A4A4A" 
                             TextColor="#9BD5E0"
                             CornerRadius="30"
                             Clicked="AddItemButton_Clicked"
