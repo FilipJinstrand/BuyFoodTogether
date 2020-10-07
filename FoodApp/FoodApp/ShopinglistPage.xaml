@@ -3,6 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:FoodApp"
              x:Class="FoodApp.ShopinglistPage">
+    <ContentPage.Resources>
+        <Style x:Key="LabelStyle" TargetType="Label">
+            <Setter Property="TextColor" Value="#333231"/>
+            <Setter Property="FontSize" Value="Body"/>
+            <Setter Property="FontAttributes" Value="Bold"/>
+        </Style>
+        <Style x:Key="LabelStriked" TargetType="Label">
+            <Setter Property="TextColor" Value="#333231"/>
+            <Setter Property="FontSize" Value="Body"/>
+            <Setter Property="FontAttributes" Value="None"/>
+            <Setter Property="TextDecorations" Value="Strikethrough"/>
+        </Style>
+    </ContentPage.Resources>
     <ContentPage.Content>
         <Grid RowSpacing="0">
             <Grid.RowDefinitions >
@@ -104,16 +117,24 @@
                                     <CheckBox x:Name="ShopingItem_Check" 
                                                 ClassId="{Binding Id}"
                                                 Grid.Column="0"
-                                                IsChecked="False" 
                                                 Color="#4A4A4A" 
+                                                IsChecked="{Binding isCompleted}"
                                                 CheckedChanged="ShopingItem_Check_CheckedChanged"/>
                                     <Label  x:Name="ItemTitle"
                                                 Grid.Column="1"
                                                 ClassId="{Binding Id}"
                                                 Text="{Binding Title}" 
-                                                FontSize="Body" 
                                                 VerticalOptions="Start"
-                                                TextColor="#333231"/>
+                                                Style="{StaticResource LabelStyle}">
+
+                                        <Label.Triggers>
+                                            <DataTrigger Binding="{Binding isCompleted}" TargetType="Label" Value="True">
+                                                <Setter Property="Style" Value="{StaticResource LabelStriked}"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+
+                                    </Label>
+                                        
                                     <Label Text="{Binding Person}" 
                                                 FontSize="Caption" 
                                                 Grid.Column="2"

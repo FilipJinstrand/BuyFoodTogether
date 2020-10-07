@@ -1,5 +1,6 @@
 ﻿using FoodApp.Models;
 using FoodApp.Services;
+using FoodApp.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -24,6 +25,7 @@ namespace FoodApp
         {
             InitializeComponent();
             apiService = DependencyService.Get<IApiService>();
+            BindingContext = new ItemViewModel();
 
             DisplayItems();
         }
