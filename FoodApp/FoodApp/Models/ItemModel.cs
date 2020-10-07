@@ -9,5 +9,6 @@ namespace FoodApp.Models
         public string Id { get; set; }
         public string Title { get; set; }
         public string Person { get; set; }
+        public bool IsCompleted { get; set; }
     }
 }
