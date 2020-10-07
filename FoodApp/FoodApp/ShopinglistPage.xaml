@@ -34,7 +34,7 @@
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
-            
+
             <Grid Grid.Row="2"
                   ColumnSpacing="0"
                   RowSpacing="0">
@@ -84,56 +84,56 @@
                         Grid.RowSpan="3"
                         Grid.ColumnSpan="3"
                         Margin="0, -20, 0, 0"/>
-                <ListView x:Name="ShoppingItemsView" 
+                <CollectionView x:Name="ShoppingItemsView" 
                           ItemsSource="{Binding ShoppingItems}" 
                           SelectionMode="None"
                           Grid.ColumnSpan="3"
                           Grid.RowSpan="3"
                           Margin="5, -20, 3, 0">
-                    <ListView.ItemTemplate>
+                    <CollectionView.ItemTemplate>
                         <DataTemplate>
-                            <ViewCell >
-                                <StackLayout Orientation="Vertical"
-                                             Margin="0, 15, 0, 0">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition  Width="40"/>
-                                            <ColumnDefinition/>
-                                            <ColumnDefinition Width="90"/>
-                                            <ColumnDefinition Width="40"/>
-                                        </Grid.ColumnDefinitions>
-                                        <CheckBox x:Name="ShopingItem_Check" 
-                                                    Grid.Column="0"
-                                                    IsChecked="False" 
-                                                    Color="#4A4A4A" 
-                                                    CheckedChanged="ShopingItem_Check_CheckedChanged"/>
-                                        <Label  x:Name="ItemTitle"
-                                                    Grid.Column="1"
-                                                    Text="{Binding Title}" 
-                                                    FontSize="Body" 
-                                                    VerticalOptions="Start"
-                                                    TextColor="#333231"/>
-                                        <Label Text="{Binding Person}" 
-                                                    FontSize="Caption" 
-                                                    Grid.Column="2"
-                                                    HorizontalOptions="EndAndExpand"
-                                                    TextColor="#4A4A4A"/>
-                                        <Button x:Name="RemoveItemButton"
-                                                    Text="X" 
-                                                    Grid.Column="3"
-                                                    FontAttributes="Bold"
-                                                    Margin="0, -12, 0, 0"
-                                                    HorizontalOptions="EndAndExpand" 
-                                                    HeightRequest="40" WidthRequest="40" 
-                                                    BackgroundColor="Transparent" 
-                                                    TextColor="#D78B7D"
-                                                    Clicked="RemoveItemButton_Clicked"/>
-                                    </Grid>
-                                </StackLayout>
-                            </ViewCell>
+                            <StackLayout Orientation="Vertical"
+                                         Margin="0, 15, 0, 0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="40"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="90"/>
+                                        <ColumnDefinition Width="40"/>
+                                    </Grid.ColumnDefinitions>
+                                    <CheckBox x:Name="ShopingItem_Check" 
+                                                ClassId="{Binding Id}"
+                                                Grid.Column="0"
+                                                IsChecked="False" 
+                                                Color="#4A4A4A" 
+                                                CheckedChanged="ShopingItem_Check_CheckedChanged"/>
+                                    <Label  x:Name="ItemTitle"
+                                                Grid.Column="1"
+                                                ClassId="{Binding Id}"
+                                                Text="{Binding Title}" 
+                                                FontSize="Body" 
+                                                VerticalOptions="Start"
+                                                TextColor="#333231"/>
+                                    <Label Text="{Binding Person}" 
+                                                FontSize="Caption" 
+                                                Grid.Column="2"
+                                                HorizontalOptions="EndAndExpand"
+                                                TextColor="#4A4A4A"/>
+                                    <Button x:Name="RemoveItemButton"
+                                                Text="X" 
+                                                Grid.Column="3"
+                                                FontAttributes="Bold"
+                                                Margin="0, -12, 0, 0"
+                                                HorizontalOptions="EndAndExpand" 
+                                                HeightRequest="40" WidthRequest="40" 
+                                                BackgroundColor="Transparent" 
+                                                TextColor="#D78B7D"
+                                                Clicked="RemoveItemButton_Clicked"/>
+                                </Grid>
+                            </StackLayout>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
                 <Button Grid.Column="1"
                             Grid.Row="1"
                             x:Name="AddItemButton"
