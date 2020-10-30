@@ -11,7 +11,7 @@ namespace FoodApp.Models
     {
         public string Id { get; set; }
         public string Title { get; set; }
-        public string Person { get; set; }
+        public string person { get; set; }
         private bool IsCompleted { get; set; }
 
         public bool isCompleted

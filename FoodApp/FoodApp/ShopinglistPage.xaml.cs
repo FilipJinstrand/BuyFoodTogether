@@ -7,7 +7,6 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -20,7 +19,6 @@ namespace FoodApp
 
         private ObservableCollection<Item> shoppingItems = new ObservableCollection<Item>();
         public ObservableCollection<Item> ShoppingItems { get { return shoppingItems; }}
-
         public ShopinglistPage()
         {
             InitializeComponent();
@@ -51,26 +49,21 @@ namespace FoodApp
             App.Current.MainPage = new LoginPage();
         }
 
-        private void ShopingItem_Check_CheckedChanged(object sender, CheckedChangedEventArgs e)
-        {
-            if (e.Value == true)
-            {
-                
-            }
-            else if(e.Value == false)
-            {
-                ShoppingItemsView.BackgroundColor = Color.FromHex("None");
-            }
-        }
-
         private void RemoveItemButton_Clicked(object sender, EventArgs e)
         {
 
         }
 
-        private void AddItemButton_Clicked(object sender, EventArgs e)
+        private async void AddItemButton_Clicked(object sender, EventArgs e)
         {
-
+            string result = await DisplayPromptAsync("Add", "What do you whant to add?");
+            Item newItem = new Item()
+            {
+                Title = result,
+                person = LoginPage.currentUser
+            };
+            await apiService.PostItemAsync(newItem);
+            App.Current.MainPage = new ShopinglistPage();
         }
     }
 }

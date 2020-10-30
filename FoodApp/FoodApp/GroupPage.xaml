@@ -34,6 +34,89 @@
                         TextColor="#E6FFFF"
                         Clicked="LogOutButton_Clicked"/>
             </Grid>
+            <Grid BackgroundColor="Transparent" 
+                  Grid.Row="1">
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition/>
+                    <RowDefinition Height="60"/>
+                    <RowDefinition Height="25"/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="60"/>
+                    <ColumnDefinition Width="25"/>
+                </Grid.ColumnDefinitions>
+                <BoxView BackgroundColor="white"
+                        CornerRadius="20"
+                        Grid.RowSpan="4"
+                        Grid.ColumnSpan="3"
+                        Margin="0, -20, 0, 0"/>
+                <CollectionView x:Name="GroupCollectionView" 
+                          ItemsSource="{Binding PersonsList}" 
+                          SelectionMode="None"
+                          Grid.Row="1"
+                          Grid.ColumnSpan="3"
+                          Grid.RowSpan="3">
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <StackLayout Orientation="Vertical"                                     
+                                            Margin="15, 5, 15, 0">
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition  Width="40"/>
+                                        <ColumnDefinition/>
+                                        <ColumnDefinition Width="90"/>
+                                    </Grid.ColumnDefinitions>
+                                    <Label  x:Name="ItemTitle"
+                                                Grid.Column="1"
+                                                Text="{Binding Name}" 
+                                                VerticalOptions="CenterAndExpand"
+                                                TextColor="#333231"
+                                                FontSize="18"/>
+                                    <Button x:Name="RemoveItemButton"
+                                                Text="X" 
+                                                Grid.Column="2"
+                                                FontSize="24"
+                                                FontAttributes="Bold"
+                                                HorizontalOptions="CenterAndExpand" 
+                                                VerticalOptions="CenterAndExpand"
+                                                BackgroundColor="Transparent" 
+                                                TextColor="#D78B7D"/>
+                                </Grid>
+                                <BoxView HeightRequest="2"
+                                         BackgroundColor="LightGray"/>
+                            </StackLayout>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+                <Button Grid.Column="1"
+                            Grid.Row="2"
+                            x:Name="AddItemButton"
+                            Text="+" 
+                            FontSize="60"
+                            FontAttributes="Bold"
+                            HeightRequest="30" WidthRequest="60" 
+                            BackgroundColor="#4A4A4A" 
+                            TextColor="#9BD5E0"
+                            CornerRadius="30"
+                            Clicked="AddPersonButton_Clicked"
+                            HorizontalOptions="CenterAndExpand"
+                            Padding="0,-13, 0, 0"/>
+                <Grid Grid.Row="0"
+                      Grid.ColumnSpan="3">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition Height="2"/>
+                    </Grid.RowDefinitions>
+                    <BoxView Grid.Row="1"
+                             BackgroundColor="DarkGray"/>
+                    <Label Text="List Group"
+                            TextColor="#333231"
+                            FontSize="32"
+                            Padding="15, 0, 0, 0"/>
+                </Grid>
+            </Grid>
             <Grid Grid.Row="2" 
                   ColumnSpacing="0"
                   RowSpacing="0">
@@ -66,39 +149,6 @@
                             Grid.Column="3"
                             IsEnabled="False"/>
 
-            </Grid>
-            <Grid BackgroundColor="Transparent" 
-                  Grid.Row="1">
-                 <Grid.RowDefinitions>
-                    <RowDefinition/>
-                    <RowDefinition Height="60"/>
-                    <RowDefinition Height="25"/>
-                </Grid.RowDefinitions>
-                <Grid.ColumnDefinitions>
-                    <ColumnDefinition/>
-                    <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="25"/>
-                </Grid.ColumnDefinitions>
-                <BoxView BackgroundColor="white"
-                        CornerRadius="20"
-                        Grid.RowSpan="3"
-                        Grid.ColumnSpan="3"
-                        Margin="0, -20, 0, 0"/>
-                
-
-                <Button Grid.Column="1"
-                            Grid.Row="1"
-                            x:Name="AddItemButton"
-                            Text="+" 
-                            FontSize="60"
-                            FontAttributes="Bold"
-                            HeightRequest="30" WidthRequest="60" 
-                            BackgroundColor="#4A4A4A" 
-                            TextColor="#9BD5E0"
-                            CornerRadius="30"
-                            Clicked="AddPersonButton_Clicked"
-                            HorizontalOptions="CenterAndExpand"
-                            Padding="0,-13, 0, 0"/>
             </Grid>
         </Grid>
     </ContentPage.Content>

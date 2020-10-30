@@ -13,6 +13,7 @@ namespace FoodApp
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class LoginPage : ContentPage
     {
+        static public string currentUser = string.Empty;
         IApiService apiService;
         public LoginPage()
         {
@@ -22,11 +23,12 @@ namespace FoodApp
 
         private async void Signin_Clicked(object sender, EventArgs e)
         {
+            currentUser = entry_Username.Text;
             var users = await apiService.GetPersons();
 
             foreach (var user in users)
             {
-                if (user.Name == entry_Username.Text)
+                if (user.Name == currentUser)
                 {
                     App.Current.MainPage = new ShopinglistPage();
                 }

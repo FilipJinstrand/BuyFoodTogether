@@ -9,7 +9,7 @@ namespace FoodApp.Services
     public interface IApiService
     {
         Task<List<Item>> GetItems();
-
+        Task<bool> PostItemAsync(Item item);
         Task<List<Person>> GetPersons();
     }
 }

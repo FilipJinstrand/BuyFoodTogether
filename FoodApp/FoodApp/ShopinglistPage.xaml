@@ -7,10 +7,9 @@
         <Style x:Key="LabelStyle" TargetType="Label">
             <Setter Property="TextColor" Value="#333231"/>
             <Setter Property="FontSize" Value="Body"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
         </Style>
         <Style x:Key="LabelStriked" TargetType="Label">
-            <Setter Property="TextColor" Value="#333231"/>
+            <Setter Property="TextColor" Value="Gray"/>
             <Setter Property="FontSize" Value="Body"/>
             <Setter Property="FontAttributes" Value="None"/>
         </Style>
@@ -109,22 +108,22 @@
                                          Margin="0, 5, 0, 0">
                                 <Grid>
                                     <Grid.ColumnDefinitions>
-                                        <ColumnDefinition  Width="40"/>
+                                        <ColumnDefinition  Width="50"/>
                                         <ColumnDefinition/>
                                         <ColumnDefinition Width="90"/>
-                                        <ColumnDefinition Width="40"/>
+                                        <ColumnDefinition Width="60"/>
                                     </Grid.ColumnDefinitions>
                                     <CheckBox x:Name="ShopingItem_Check" 
                                                 ClassId="{Binding Id}"
                                                 Grid.Column="0"
                                                 Color="#4A4A4A" 
                                                 IsChecked="{Binding isCompleted}"
-                                                CheckedChanged="ShopingItem_Check_CheckedChanged"/>
+                                                HorizontalOptions="CenterAndExpand"/>
                                     <Label  x:Name="ItemTitle"
                                                 Grid.Column="1"
                                                 ClassId="{Binding Id}"
                                                 Text="{Binding Title}" 
-                                                VerticalOptions="Start"
+                                                VerticalOptions="CenterAndExpand"
                                                 Style="{StaticResource LabelStyle}">
 
                                         <Label.Triggers>
@@ -134,23 +133,34 @@
                                         </Label.Triggers>
 
                                     </Label>
-                                        
-                                    <Label Text="{Binding Person}" 
+
+                                    <Label Text="{Binding person}" 
                                                 FontSize="Caption" 
                                                 Grid.Column="2"
                                                 HorizontalOptions="EndAndExpand"
-                                                TextColor="#4A4A4A"/>
+                                                VerticalOptions="CenterAndExpand"
+                                                ClassId="{Binding Id}"
+                                                Style="{StaticResource LabelStyle}">
+                                        <Label.Triggers>
+                                            <DataTrigger Binding="{Binding isCompleted}" TargetType="Label" Value="True">
+                                                <Setter Property="Style" Value="{StaticResource LabelStriked}"/>
+                                            </DataTrigger>
+                                        </Label.Triggers>
+                                    </Label>
                                     <Button x:Name="RemoveItemButton"
                                                 Text="X" 
                                                 Grid.Column="3"
+                                                FontSize="20"
                                                 FontAttributes="Bold"
                                                 Margin="0, -12, 0, 0"
-                                                HorizontalOptions="EndAndExpand" 
-                                                HeightRequest="40" WidthRequest="40" 
+                                                HorizontalOptions="CenterAndExpand" 
+                                                VerticalOptions="CenterAndExpand"
                                                 BackgroundColor="Transparent" 
                                                 TextColor="#D78B7D"
                                                 Clicked="RemoveItemButton_Clicked"/>
                                 </Grid>
+                                <BoxView HeightRequest="2"
+                                         BackgroundColor="LightGray"/>
                             </StackLayout>
                         </DataTemplate>
                     </CollectionView.ItemTemplate>

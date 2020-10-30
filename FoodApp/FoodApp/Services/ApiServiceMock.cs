@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FoodApp.Services
 {
-    public class ApiServiceMock : IApiService
+    /*public class ApiServiceMock : IApiService
     {
         public async Task<List<Item>> GetItems()
         {
@@ -31,5 +31,6 @@ namespace FoodApp.Services
                 //Name = "Karl"
             };
         }
-    }
+
+    }*/
 }
