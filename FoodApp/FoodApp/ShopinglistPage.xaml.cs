@@ -52,12 +52,13 @@ namespace FoodApp
         private async void RemoveItemButton_Clicked(object sender, EventArgs e)
         {
             var item = (ImageButton)sender;
-            bool answer = await DisplayAlert("Delete", "Would you like to remove the item?", "Yes", "No");
+            bool answer = await DisplayAlert("Delete", "Would you like to delete " + item.AutomationId +"?", "Yes", "No");
             if(!answer)
             {
 
             }
-            else { 
+            else 
+            { 
                 var itemId = item.ClassId;
                 await apiService.DeleteItemAsync(itemId);
                 App.Current.MainPage = new ShopinglistPage();

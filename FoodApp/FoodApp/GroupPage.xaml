@@ -74,15 +74,14 @@
                                                 VerticalOptions="CenterAndExpand"
                                                 TextColor="#333231"
                                                 FontSize="18"/>
-                                    <Button x:Name="RemoveItemButton"
-                                                Text="X" 
-                                                Grid.Column="2"
-                                                FontSize="24"
-                                                FontAttributes="Bold"
-                                                HorizontalOptions="CenterAndExpand" 
-                                                VerticalOptions="CenterAndExpand"
-                                                BackgroundColor="Transparent" 
-                                                TextColor="#D78B7D"/>
+                                    <ImageButton Source="{local:ImageResourceExtention FoodApp.images.TrashIcon.png}"
+                                                    x:Name="RemoveItemButton"
+                                                    ClassId="{Binding Id}"       
+                                                    AutomationId="{Binding Name}"
+                                                    Grid.Column="3"
+                                                    HeightRequest="30"
+                                                    BackgroundColor="Transparent"
+                                                    Clicked="RemovePersonButton_Clicked"/>
                                 </Grid>
                                 <BoxView HeightRequest="2"
                                          BackgroundColor="LightGray"/>

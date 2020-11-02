@@ -40,10 +40,31 @@ namespace FoodApp
         {
             App.Current.MainPage = new LoginPage();
         }
+        private async void RemovePersonButton_Clicked(object sender, EventArgs e)
+        {
+            var person = (ImageButton)sender;
+            bool answer = await DisplayAlert("Delete", "Would you like to delete "+ person.AutomationId +"?", "Yes", "No");
+            if (!answer)
+            {
+
+            }
+            else
+            {
+                var personId = person.ClassId;
+                await apiService.DeletePersonAsync(personId);
+                App.Current.MainPage = new GroupPage();
+            }
+        }
 
         private async void AddPersonButton_Clicked(object sender, EventArgs e)
-        {          
-                
+        {
+            string result = await DisplayPromptAsync("Add", "Who do you want to join?");
+            Person newPerson = new Person()
+            {
+                Name = result,
+            };
+            await apiService.PostPersonAsync(newPerson);
+            App.Current.MainPage = new GroupPage();
         }
     }
 }

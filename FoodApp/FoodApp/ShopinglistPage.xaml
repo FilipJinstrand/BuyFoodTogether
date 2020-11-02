@@ -147,11 +147,13 @@
                                             </DataTrigger>
                                         </Label.Triggers>
                                     </Label>
-                                    <ImageButton Source="{local:ImageResourceExtention FoodApp.images.cancel-button.png}"
+                                    <ImageButton Source="{local:ImageResourceExtention FoodApp.images.TrashIcon.png}"
                                                     x:Name="RemoveItemButton"
-                                                    ClassId="{Binding Id}"                                                
+                                                    ClassId="{Binding Id}"    
+                                                    AutomationId="{Binding Title}"
                                                     Grid.Column="3"
-                                                    HeightRequest="40"
+                                                    HeightRequest="16"
+                                                    BackgroundColor="Transparent"
                                                     Clicked="RemoveItemButton_Clicked"/>
                                 </Grid>
                                 <BoxView HeightRequest="2"
