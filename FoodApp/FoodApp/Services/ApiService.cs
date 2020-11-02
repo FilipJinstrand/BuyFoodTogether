@@ -30,11 +30,11 @@ namespace FoodApp.Services
             HttpResponseMessage response =  await client.PostAsync("items", content);
             return response.IsSuccessStatusCode;
         }
-        public async Task<bool> DeleteItemAsync(Item item)
+        public async Task<bool> DeleteItemAsync(String itemId)
         {
-            var serializedObject = JsonConvert.SerializeObject(item);
-            var content = new StringContent(serializedObject, Encoding.UTF8, "application/json");
-            HttpResponseMessage response = await client.PostAsync("items", content);
+            string id = itemId;
+            var uri = new Uri(string.Format(url + "items/" + id));
+            HttpResponseMessage response = await client.DeleteAsync(uri);
             return response.IsSuccessStatusCode;
         }
 

@@ -49,11 +49,20 @@ namespace FoodApp
             App.Current.MainPage = new LoginPage();
         }
 
-        private void RemoveItemButton_Clicked(object sender, EventArgs e)
+        private async void RemoveItemButton_Clicked(object sender, EventArgs e)
         {
+            var item = (ImageButton)sender;
+            bool answer = await DisplayAlert("Delete", "Would you like to remove the item?", "Yes", "No");
+            if(!answer)
+            {
 
+            }
+            else { 
+                var itemId = item.ClassId;
+                await apiService.DeleteItemAsync(itemId);
+                App.Current.MainPage = new ShopinglistPage();
+            }
         }
-
         private async void AddItemButton_Clicked(object sender, EventArgs e)
         {
             string result = await DisplayPromptAsync("Add", "What do you whant to add?");
