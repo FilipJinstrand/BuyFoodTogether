@@ -45,7 +45,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition/>
                     <ColumnDefinition Width="60"/>
-                    <ColumnDefinition Width="25"/>
+                    <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
                 <BoxView BackgroundColor="white"
                         CornerRadius="20"
