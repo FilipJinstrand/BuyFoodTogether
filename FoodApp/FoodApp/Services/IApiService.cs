@@ -10,6 +10,7 @@ namespace FoodApp.Services
     {
         Task<List<Item>> GetItems();
         Task<bool> PostItemAsync(Item item);
+        Task<bool> DeleteItemAsync(String itemId);
         Task<List<Person>> GetPersons();
     }
 }

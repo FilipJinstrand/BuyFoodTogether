@@ -49,9 +49,12 @@ namespace FoodApp
             App.Current.MainPage = new LoginPage();
         }
 
-        private void RemoveItemButton_Clicked(object sender, EventArgs e)
+        private async void RemoveItemButton_Clicked(object sender, EventArgs e)
         {
-
+            var item = (Button)sender;
+            var itemId = item.ClassId;
+            await apiService.DeleteItemAsync(itemId);
+            App.Current.MainPage = new ShopinglistPage();
         }
 
         private async void AddItemButton_Clicked(object sender, EventArgs e)

@@ -148,6 +148,7 @@
                                         </Label.Triggers>
                                     </Label>
                                     <Button x:Name="RemoveItemButton"
+                                                ClassId="{Binding Id}"
                                                 Text="X" 
                                                 Grid.Column="3"
                                                 FontSize="20"
