@@ -11,6 +11,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="images\cancel-button.png" />
     <None Remove="images\LoginPage_WNTB_logo.png" />
     <None Remove="images\Logo_WNTB.png" />
     <None Remove="images\Logo_WNTBmain.png" />
@@ -31,6 +32,10 @@
     <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
     <PackageReference Include="Xamarin.Forms" Version="4.6.0.1141" />
     <PackageReference Include="Xamarin.Essentials" Version="1.5.3.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="images\cancel-button.png" />
   </ItemGroup>
 
   <ItemGroup>
