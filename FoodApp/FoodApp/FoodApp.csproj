@@ -17,6 +17,7 @@
     <None Remove="images\Logo_WNTBmain.png" />
     <None Remove="images\Logo_WNTBv1.png" />
     <None Remove="images\MainPage_WNTB_logo.png" />
+    <None Remove="images\TrashIcon.png" />
     <None Remove="images\XamarinLogo.png" />
   </ItemGroup>
 
@@ -26,6 +27,7 @@
     <EmbeddedResource Include="images\Logo_WNTBmain.png" />
     <EmbeddedResource Include="images\Logo_WNTBv1.png" />
     <EmbeddedResource Include="images\MainPage_WNTB_logo.png" />
+    <EmbeddedResource Include="images\TrashIcon.png" />
   </ItemGroup>
 
   <ItemGroup>

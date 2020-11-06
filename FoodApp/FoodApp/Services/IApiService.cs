@@ -12,5 +12,7 @@ namespace FoodApp.Services
         Task<bool> PostItemAsync(Item item);
         Task<bool> DeleteItemAsync(String itemId);
         Task<List<Person>> GetPersons();
+        Task<bool> DeletePersonAsync(String personId);
+        Task<bool> PostPersonAsync(Person person);
     }
 }

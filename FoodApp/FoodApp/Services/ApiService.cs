@@ -37,12 +37,27 @@ namespace FoodApp.Services
             HttpResponseMessage response = await client.DeleteAsync(uri);
             return response.IsSuccessStatusCode;
         }
+        
 
         public async Task<List<Person>> GetPersons()
         {
             var data = await Get(url + "persons");
             return JsonConvert.DeserializeObject<List<Person>>(data);
-        }       
+        }
+        public async Task<bool> PostPersonAsync(Person person)
+        {
+            var serializedObject = JsonConvert.SerializeObject(person);
+            var content = new StringContent(serializedObject, Encoding.UTF8, "application/json");
+            HttpResponseMessage response = await client.PostAsync("persons", content);
+            return response.IsSuccessStatusCode;
+        }
+        public async Task<bool> DeletePersonAsync(String personId)
+        {
+            string id = personId;
+            var uri = new Uri(string.Format(url + "persons/" + id));
+            HttpResponseMessage response = await client.DeleteAsync(uri);
+            return response.IsSuccessStatusCode;
+        }
         private async Task<string> Get(string url)
         {
             HttpResponseMessage response = await client.GetAsync(url);
