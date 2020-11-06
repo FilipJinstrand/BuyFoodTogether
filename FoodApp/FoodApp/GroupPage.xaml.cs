@@ -58,13 +58,19 @@ namespace FoodApp
 
         private async void AddPersonButton_Clicked(object sender, EventArgs e)
         {
-            string result = await DisplayPromptAsync("Add", "Who do you want to join?");
+            var result = await DisplayPromptAsync("Add", "Who do you want to join?");
+            if (result == null)
+            {
+
+            }
+            else { 
             Person newPerson = new Person()
             {
                 Name = result,
             };
             await apiService.PostPersonAsync(newPerson);
             App.Current.MainPage = new GroupPage();
+            }
         }
     }
 }
